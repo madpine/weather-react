@@ -75,7 +75,7 @@ export default function Weather() {
         </div>
       </div>
       <p className="github-link">
-        <a href="https://github.com/madpine/weather-react" target="_blank" rel="noreferer">
+        <a href="https://github.com/madpine/weather-react">
           Open-source code
         </a>{" "}
         by Maddie Pine
