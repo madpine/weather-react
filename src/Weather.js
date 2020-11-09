@@ -63,7 +63,7 @@ export default function Weather() {
             <h2>
               {weatherData.temperature}
               <span className="unit">
-                <a href="#"> ˚C </a> | <a href="#"> ˚F </a>
+                <button> ˚C </button> | <button> ˚F </button>
               </span>
             </h2>
           </div>
