@@ -4,9 +4,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <Weather />
-      </header>
+        <footer>
+          This project is {" "}
+          <a href="https://github.com/madpine/weather-react" target="_blank">open-sourced</a>
+          {" "} and was coded by Maddie Pine
+        </footer>
     </div>
   );
 }
