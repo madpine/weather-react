@@ -41,39 +41,39 @@ export default function Weather() {
              </div>
             </div>
           </form>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-7">
-          <h1 className="current-city">{weatherData.city}</h1>
-          <p className="date-time">
-            {weatherData.date} | {weatherData.time}
-          </p>
-          <div className="row">
-            <p className="details">
-              <ul>
-                <li>Humidity: {weatherData.humidity}%</li>
-                <li>Wind: {weatherData.wind}mph</li>
-                <li>Description: {weatherData.description}</li>
-              </ul>
-            </p>
+         <div className="row">
+           <div className="col-7">
+             <h1 className="current-city">{weatherData.city}</h1>
+              <p className="date-time">
+               {weatherData.date} | {weatherData.time}
+             </p>
+              <div className="row">
+                <p className="details">
+                  <ul>
+                  <li>Humidity: {weatherData.humidity}%</li>
+                  <li>Wind: {weatherData.wind}mph</li>
+                    <li>Description: {weatherData.description}</li>
+                  </ul>
+                </p>
+              </div>
+           </div>
+           <div className="col-5">
+             <div className="row">
+                <h2>
+                  {weatherData.temperature}
+                  <span className="unit">
+                   <button> ˚C </button> | <button> ˚F </button>
+                  </span>
+                </h2>
+             </div>
+            </div>
+         </div>
+         <div className="card">
+           <div className="card-body weekly-card">
+              <div className="row"></div>
+            </div>
           </div>
-        </div>
-        <div className="col-5">
-          <div className="row">
-            <h2>
-              {weatherData.temperature}
-              <span className="unit">
-                <button> ˚C </button> | <button> ˚F </button>
-              </span>
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div className="card">
-        <div className="card-body weekly-card">
-          <div className="row"></div>
-        </div>
+       </div>
       </div>
     </div>
   );
