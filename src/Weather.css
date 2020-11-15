@@ -10,6 +10,10 @@
   border-radius: 4px;
 }
 
+form {
+  margin-bottom: 10px;
+}
+
 h1 {
   color: #460777;
   font-size: 40px;
@@ -21,19 +25,17 @@ p.date-time {
   margin: 0 auto;
 }
 
-.current-temp {
+h2 {
   color: #4d4c53;
-  font-size: 80px;
-  font-weight: 200;
+  font-size: 70px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px;
   position: relative;
-  top: 40px;
 }
 
 .unit {
-  font-size: 22px;
-  margin: 30px 0 0;
+  font-size: 10px;
+  margin: 0 0 30px 0;
 }
 
 .unit .active {
@@ -45,14 +47,20 @@ p.date-time {
   text-decoration: none;
 }
 
+.icon {
+  text-align: center;
+  font-size: 15px;
+}
+
 ul {
   margin-top: 10px;
-  text-align: center;
+  padding-left: 75px;
+  text-align: justify;
 }
 
 li {
   color: #4d4c53;
-  display: inline;
+
   font-size: 12px;
   list-style: none;
   margin: 0;

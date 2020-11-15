@@ -25,6 +25,7 @@ export default function Weather() {
                   className="city-search"
                   placeholder="Search for a city..."
                   autocomplete="off"
+                  autoFocus="on"
                 />
               </div>
               <div className="col-2">
@@ -65,6 +66,9 @@ export default function Weather() {
                    <button> ˚C </button> | <button> ˚F </button>
                   </span>
                 </h2>
+             </div>
+             <div className="row icon">
+               <img src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" alt="Sunny" />
              </div>
             </div>
          </div>
