@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NiceDate from './NiceDate';
 import axios from 'axios';
 import './Weather.css';
 
@@ -7,11 +8,11 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data)
+
     setWeatherData({
       ready: true,
       city: response.data.name,
-      date: "October 12, 2020",
+      date: new Date(response.data.dt * 1000),
       time: "12:30",
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
@@ -56,8 +57,8 @@ export default function Weather(props) {
             <div className="col-7">
               <h1 className="current-city">{weatherData.city}</h1>
                 <p className="date-time">
-                {weatherData.date} | {weatherData.time}
-              </p>
+                 <NiceDate date={weatherData.date} />
+               </p>
                 <div className="row">
                   <ul className="details">
                       <li>Humidity: {weatherData.humidity}%</li>
