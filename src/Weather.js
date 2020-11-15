@@ -1,84 +1,100 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './Weather.css';
 
 
-export default function Weather() {
-  let weatherData = {
-    city: "Tel Aviv",
-    date: "October 12, 2020",
-    time: "12:30",
-    temperature: 82,
-    description: "Cloudy",
-    humidity: 56,
-    wind: 5
-  };
-  return (
-    <div className="container">
-      <div className="card">
-        <div className="card-body whole-card shadow-sm">
-          <form>
-            <div className="row">
-              <div className="col-7">
-                <input
-                  type="search"
-                  name="City"
-                  className="city-search"
-                  placeholder="Search for a city..."
-                  autocomplete="off"
-                  autoFocus="on"
-                />
-              </div>
-              <div className="col-2">
-                <input
-                  type="submit"
-                  value="Search"
-                  className="search-button shadow-sm"
-                />
-              </div>
-              <div className="col-2"> 
-                <button className="search-button current-button shadow-sm">
-                  Current
-                </button>
-             </div>
-            </div>
-          </form>
-         <div className="row">
-           <div className="col-7">
-             <h1 className="current-city">{weatherData.city}</h1>
-              <p className="date-time">
-               {weatherData.date} | {weatherData.time}
-             </p>
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+
+  function handleResponse(response) {
+    console.log(response.data)
+    setWeatherData({
+      ready: true,
+      city: response.data.name,
+      date: "October 12, 2020",
+      time: "12:30",
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      iconUrl: "https://www.flaticon.com/svg/static/icons/svg/566/566516.svg"
+    })
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="container">
+        <div className="card">
+          <div className="card-body whole-card shadow-sm">
+            <form>
               <div className="row">
-                <p className="details">
-                  <ul>
-                  <li>Humidity: {weatherData.humidity}%</li>
-                  <li>Wind: {weatherData.wind}mph</li>
-                    <li>Description: {weatherData.description}</li>
-                  </ul>
-                </p>
+                <div className="col-7">
+                  <input
+                    type="search"
+                    name="City"
+                    className="city-search"
+                    placeholder="Search for a city..."
+                    autoComplete="off"
+                    autoFocus="on"
+                  />
+                </div>
+                <div className="col-2">
+                  <input
+                    type="submit"
+                    value="Search"
+                    className="search-button shadow-sm"
+                  />
+                </div>
+                <div className="col-2"> 
+                  <button className="search-button current-button shadow-sm">
+                    Current
+                  </button>
               </div>
-           </div>
-           <div className="col-5">
-             <div className="row">
-                <h2>
-                  {weatherData.temperature}
-                  <span className="unit">
-                   <button> ˚C </button> | <button> ˚F </button>
-                  </span>
-                </h2>
-             </div>
-             <div className="row icon">
-               <img src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" alt="Sunny" />
-             </div>
+              </div>
+            </form>
+          <div className="row">
+            <div className="col-7">
+              <h1 className="current-city">{weatherData.city}</h1>
+                <p className="date-time">
+                {weatherData.date} | {weatherData.time}
+              </p>
+                <div className="row">
+                  <ul className="details">
+                      <li>Humidity: {weatherData.humidity}%</li>
+                      <li>Wind: {Math.round(weatherData.wind)} mph</li>
+                      <li className="text-capitalize">Description: {weatherData.description}</li>
+                  </ul>
+                </div>
             </div>
-         </div>
-         <div className="card">
-           <div className="card-body weekly-card">
-              <div className="row"></div>
-            </div>
+            <div className="col-5">
+              <div className="row">
+                  <h2>
+                    {Math.round(weatherData.temperature)}
+                    <span className="unit">
+                    <button> ˚C </button> | <button> ˚F </button>
+                    </span>
+                  </h2>
+              </div>
+              <div className="row icon">
+                <img src={weatherData.iconUrl} alt={weatherData.description} />
+              </div>
+              </div>
           </div>
-       </div>
+          <div className="card">
+            <div className="card-body weekly-card">
+                <div className="row"></div>
+              </div>
+            </div>
+        </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "669df815a230d0606e20716b21beda24";
+    let unit = "imperial"
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(handleResponse)
+
+    return "Loading...";
+  }
 }

@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="Tel Aviv"/>
         <footer>
           This project is {" "}
           <a href="https://github.com/madpine/weather-react" target="_blank">open-sourced</a>
