@@ -34,12 +34,13 @@ export default function Weather() {
                   className="search-button shadow-sm"
                 />
               </div>
-              <div className="col-2"> </div>
+              <div className="col-2"> 
+                <button className="search-button current-button shadow-sm">
+                  Current
+                </button>
+             </div>
             </div>
           </form>
-          <button className="search-button current-button shadow-sm">
-            Current
-          </button>
         </div>
       </div>
       <div className="row">
