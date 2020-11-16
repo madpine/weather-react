@@ -1,6 +1,7 @@
 import React from 'react';
 import NiceDate from './NiceDate';
 import WeatherIcon from './WeatherIcon';
+import WeatherTemperature from './WeatherTemperature';
 
 export default function WeatherInfo(props) {
     return (
@@ -21,12 +22,7 @@ export default function WeatherInfo(props) {
                 </div>
                 <div className="col-5">
                     <div className="row">
-                        <h2>
-                            {Math.round(props.data.temperature)}
-                            <span className="unit">
-                            <button> ˚C </button> | <button> ˚F </button>
-                            </span>
-                        </h2>
+                        <WeatherTemperature fahrenheit={props.data.temperature} />
                     </div>
                     <div className="row icon">
                         <div className="float">
