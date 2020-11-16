@@ -9,7 +9,7 @@ function App() {
         <Weather defaultCity="Tel Aviv"/>
         <footer>
           This project is {" "}
-          <a href="https://github.com/madpine/weather-react" target="_blank">open-sourced</a>
+          <a href="https://github.com/madpine/weather-react" target="_blank" rel="noreferrer">open-sourced</a>
           {" "} and was coded by Maddie Pine
         </footer>
         </div>
