@@ -48,7 +48,7 @@ export default function Weather(props) {
           <div className="card-body whole-card shadow-sm">
             <form onSubmit={handleSubmit}>
               <div className="row">
-                <div className="col-7">
+                <div className="col-9">
                   <input
                     type="search"
                     name="City"
@@ -65,11 +65,6 @@ export default function Weather(props) {
                     value="Search"
                     className="search-button shadow-sm"
                   />
-                </div>
-                <div className="col-2"> 
-                  <button className="search-button current-button shadow-sm">
-                    Current
-                  </button>
                 </div>
               </div>
             </form>

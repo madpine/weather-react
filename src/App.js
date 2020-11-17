@@ -8,9 +8,8 @@ function App() {
       <div className="container">
         <Weather defaultCity="Tel Aviv"/>
         <footer>
-          This project is {" "}
-          <a href="https://github.com/madpine/weather-react" target="_blank" rel="noreferrer">open-sourced</a>
-          {" "} and was coded by Maddie Pine
+          <a href="https://github.com/madpine/weather-react" target="_blank" rel="noreferrer">Open-source code</a>
+          {" "} by Maddie Pine
         </footer>
         </div>
     </div>
