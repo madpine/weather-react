@@ -17,7 +17,7 @@ export default function WeatherForecastPreview(props) {
     return (
          <div className="col WeatherForecastPreview">
              {hours()}
-            <WeatherIcon code={props.data.weather[0].icon}/>
+            <WeatherIcon code={props.data.weather[0].icon} size={40}/>
             {temperature()}
         </div>
     );

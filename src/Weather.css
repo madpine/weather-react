@@ -92,6 +92,10 @@ canvas {
   padding: 0;
 }
 
+div.weatherIcon {
+  width: 100px;
+}
+
 p.github-link {
   font-size: 13px;
   text-align: center;

@@ -2,6 +2,7 @@ import React from 'react';
 import NiceDate from './NiceDate';
 import WeatherIcon from './WeatherIcon';
 import WeatherTemperature from './WeatherTemperature';
+import './Weather.css';
 
 export default function WeatherInfo(props) {
     return (
@@ -24,9 +25,9 @@ export default function WeatherInfo(props) {
                     <div className="row">
                         <WeatherTemperature fahrenheit={props.data.temperature} />
                     </div>
-                    <div className="row icon">
-                        <div className="float">
-                            <WeatherIcon code={props.data.icon} />
+                    <div className="row">
+                        <div className="weatherIcon">
+                            <WeatherIcon code={props.data.icon} size={70}/>
                         </div>
                     </div>
                 </div>
