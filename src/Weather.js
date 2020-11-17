@@ -55,7 +55,6 @@ export default function Weather(props) {
                     className="city-search"
                     placeholder="Search for a city..."
                     autoComplete="off"
-                    autoFocus="on"
                     onChange={handleCityChange}
                   />
                 </div>
